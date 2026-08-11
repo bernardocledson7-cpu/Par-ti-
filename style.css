@@ -1,0 +1,1160 @@
+/* =========================================================
+   GALÁXIA DO AMOR — STYLE.CSS
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #020003;
+    color: white;
+    font-family: "Cinzel", serif;
+}
+
+body {
+    position: relative;
+    touch-action: none;
+}
+
+/* =========================================================
+   PÁGINA PRINCIPAL
+========================================================= */
+
+#galaxyPage {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 42%, #24000f 0%, #0b0008 35%, #020003 74%);
+}
+
+/* =========================================================
+   TELA DE ENTRADA
+========================================================= */
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at center, #300018 0%, #09000d 45%, #020003 100%);
+
+    transition:
+        opacity 1.5s ease,
+        visibility 1.5s ease;
+}
+
+#intro.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(90%, 500px);
+    text-align: center;
+
+    animation: introFloat 4s ease-in-out infinite;
+}
+
+.intro-heart {
+    font-size: 75px;
+    margin-bottom: 20px;
+
+    filter:
+        drop-shadow(0 0 10px #ff2b78)
+        drop-shadow(0 0 30px #ff0055)
+        drop-shadow(0 0 60px #ff0055);
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.intro-content h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(42px, 10vw, 70px);
+    font-weight: 400;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px #ff3d86,
+        0 0 25px #ff1264,
+        0 0 50px #ff0055;
+}
+
+.intro-content p {
+    margin-top: 15px;
+
+    color: #f7c6d9;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+#enterButton {
+    margin-top: 35px;
+
+    padding: 15px 28px;
+
+    border: 1px solid rgba(255, 80, 145, 0.8);
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 20, 100, 0.2),
+            rgba(150, 0, 70, 0.15)
+        );
+
+    color: white;
+
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px rgba(255, 0, 100, 0.3),
+        inset 0 0 20px rgba(255, 0, 100, 0.05);
+
+    transition: 0.3s;
+}
+
+#enterButton:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 100, 0.6),
+        0 0 50px rgba(255, 0, 100, 0.25);
+}
+
+#enterButton:active {
+    transform: scale(0.96);
+}
+
+/* =========================================================
+   ESTRELAS
+========================================================= */
+
+#stars {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,120,180,0.6) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1px);
+
+    background-size:
+        120px 120px,
+        190px 190px,
+        260px 260px;
+
+    background-position:
+        0 0,
+        50px 80px,
+        130px 40px;
+
+    opacity: 0.45;
+
+    animation: starsMove 30s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* =========================================================
+   CONTAINER 3D
+========================================================= */
+
+#galaxy-container {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+}
+
+#galaxy-container canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+/* =========================================================
+   CORAÇÃO
+========================================================= */
+
+#heart-container {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 220px;
+    height: 220px;
+
+    transform:
+        translate(-50%, -50%)
+        translateZ(0);
+
+    z-index: 8;
+
+    pointer-events: none;
+}
+
+#heart-container::before {
+    content: "❤";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 150px;
+
+    color: rgba(255, 20, 90, 0.05);
+
+    filter:
+        blur(2px)
+        drop-shadow(0 0 15px #ff0066)
+        drop-shadow(0 0 40px #ff0066)
+        drop-shadow(0 0 80px #ff0066);
+
+    animation: heartGlow 2s ease-in-out infinite;
+}
+
+@keyframes heartGlow {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.08);
+        opacity: 1;
+    }
+}
+
+/* =========================================================
+   BURACO NEGRO
+========================================================= */
+
+#black-hole {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 90px;
+    height: 90px;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 7;
+
+    pointer-events: none;
+}
+
+.black-hole-center {
+    position: absolute;
+
+    inset: 18px;
+
+    border-radius: 50%;
+
+    background: #000;
+
+    box-shadow:
+        0 0 20px #000,
+        0 0 35px rgba(255, 0, 80, 0.25);
+}
+
+.black-hole-ring {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(255, 35, 110, 0.4);
+
+    box-shadow:
+        0 0 10px #ff0059,
+        0 0 25px #ff0059,
+        inset 0 0 15px #ff0059;
+
+    animation: blackHoleRotate 4s linear infinite;
+}
+
+@keyframes blackHoleRotate {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(180deg) scale(1.08);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* =========================================================
+   TEXTOS ORBITAIS
+========================================================= */
+
+#orbit-texts {
+    display: none;
+    position: absolute;
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.orbit-text {
+    position: absolute;
+
+    white-space: nowrap;
+
+    color: #ffd6e5;
+
+    font-family: "Cinzel", serif;
+
+    font-size: clamp(9px, 1.8vw, 14px);
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 5px #ff2f78,
+        0 0 12px #ff0055,
+        0 0 25px rgba(255, 0, 90, 0.8);
+
+    opacity: 0.9;
+
+    animation: textFloat 5s ease-in-out infinite;
+}
+
+.text-1 {
+    left: 13%;
+    top: 38%;
+}
+
+.text-2 {
+    right: 12%;
+    top: 32%;
+    animation-delay: -1s;
+}
+
+.text-3 {
+    left: 20%;
+    top: 63%;
+    animation-delay: -2s;
+}
+
+.text-4 {
+    right: 17%;
+    top: 61%;
+    animation-delay: -3s;
+}
+
+.text-5 {
+    left: 8%;
+    top: 52%;
+    animation-delay: -1.5s;
+}
+
+.text-6 {
+    right: 5%;
+    top: 48%;
+    animation-delay: -2.5s;
+}
+
+.text-7 {
+    left: 30%;
+    top: 22%;
+    animation-delay: -4s;
+}
+
+.text-8 {
+    right: 28%;
+    top: 76%;
+    animation-delay: -3.5s;
+}
+
+@keyframes textFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+/* =========================================================
+   FIGURINHAS
+========================================================= */
+
+#cute-elements {
+    position: absolute;
+    inset: 0;
+
+    z-index: 11;
+
+    pointer-events: none;
+}
+
+.cute {
+    position: absolute;
+
+    font-size: clamp(20px, 4vw, 38px);
+
+    filter:
+        drop-shadow(0 0 8px rgba(255, 0, 100, 0.7))
+        drop-shadow(0 0 20px rgba(255, 0, 100, 0.4));
+
+    animation: cuteFloat 4s ease-in-out infinite;
+}
+
+.cute-1 {
+    left: 25%;
+    top: 30%;
+}
+
+.cute-2 {
+    right: 24%;
+    top: 27%;
+    animation-delay: -1s;
+}
+
+.cute-3 {
+    left: 30%;
+    top: 73%;
+    animation-delay: -2s;
+}
+
+.cute-4 {
+    right: 28%;
+    top: 70%;
+    animation-delay: -3s;
+}
+
+.cute-5 {
+    left: 10%;
+    top: 45%;
+    animation-delay: -1.5s;
+}
+
+.cute-6 {
+    right: 10%;
+    top: 55%;
+    animation-delay: -2.5s;
+}
+
+@keyframes cuteFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+/* =========================================================
+   CONTROLES
+========================================================= */
+
+#controls {
+    position: absolute;
+
+    right: 20px;
+    bottom: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    z-index: 50;
+}
+
+.control-button {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255, 80, 145, 0.5);
+
+    background: rgba(30, 0, 20, 0.65);
+
+    backdrop-filter: blur(8px);
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 90, 0.25);
+
+    transition: 0.3s;
+}
+
+.control-button:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 90, 0.6);
+}
+
+.control-button:active {
+    transform: scale(0.9);
+}
+
+/* =========================================================
+   INDICAÇÃO
+========================================================= */
+
+#interaction-hint {
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    z-index: 30;
+
+    padding: 9px 16px;
+
+    border-radius: 30px;
+
+    background: rgba(10, 0, 8, 0.5);
+
+    border: 1px solid rgba(255, 100, 160, 0.15);
+
+    backdrop-filter: blur(5px);
+
+    color: rgba(255, 210, 225, 0.7);
+
+    font-size: 10px;
+
+    white-space: nowrap;
+
+    animation: hintFade 6s ease forwards;
+}
+
+@keyframes hintFade {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* =========================================================
+   MENSAGEM
+========================================================= */
+
+#love-message {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(2, 0, 3, 0.8);
+
+    backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.7s;
+}
+
+#love-message.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message-box {
+    width: min(90%, 500px);
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(255, 70, 130, 0.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(60, 0, 35, 0.8),
+            rgba(15, 0, 12, 0.85)
+        );
+
+    box-shadow:
+        0 0 30px rgba(255, 0, 90, 0.25),
+        inset 0 0 30px rgba(255, 0, 90, 0.04);
+}
+
+.message-small {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #ff8bb5;
+}
+
+.message-box h2 {
+    margin: 12px 0 18px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: 48px;
+
+    font-weight: 400;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 15px #ff1665;
+}
+
+.message-box p {
+    margin: 15px 0;
+
+    color: #f4d4df;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.message-box strong {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #ff7baa;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+/* =========================================================
+   MEMÓRIAS
+========================================================= */
+
+#memories {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 90;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(2, 0, 3, 0.92);
+
+    backdrop-filter: blur(15px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.7s;
+}
+
+#memories.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#memories h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 45px;
+
+    font-weight: 400;
+
+    color: #fff;
+
+    text-shadow: 0 0 20px #ff1264;
+}
+
+.memory-subtitle {
+    margin-top: 8px;
+
+    color: #dba9bc;
+
+    font-size: 11px;
+}
+
+.memory-orbit {
+    display: flex;
+
+    gap: 20px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+.memory {
+    width: 140px;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    background: rgba(50, 0, 30, 0.6);
+
+    border: 1px solid rgba(255, 70, 130, 0.3);
+
+    box-shadow:
+        0 0 20px rgba(255, 0, 90, 0.15);
+
+    text-align: center;
+
+    transition: 0.4s;
+}
+
+.memory:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.memory-image {
+    height: 110px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 50, 120, 0.2),
+            rgba(10, 0, 10, 0.8)
+        );
+
+    font-size: 40px;
+}
+
+.memory span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #ffc4d8;
+
+    font-size: 10px;
+}
+
+/* =========================================================
+   NOTIFICAÇÃO
+========================================================= */
+
+#notification {
+    position: fixed;
+
+    left: 50%;
+    top: 20px;
+
+    transform: translate(-50%, -100px);
+
+    z-index: 500;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    background: rgba(35, 0, 20, 0.85);
+
+    border: 1px solid rgba(255, 80, 140, 0.35);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 25px rgba(255, 0, 100, 0.25);
+
+    transition: 0.5s;
+
+    pointer-events: none;
+}
+
+#notification.show {
+    transform: translate(-50%, 0);
+}
+
+#notificationIcon {
+    font-size: 20px;
+}
+
+#notificationText {
+    color: #ffd5e3;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   TELA FINAL
+========================================================= */
+
+#final-screen {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 200;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #280012,
+            #090008 50%,
+            #020003 100%
+        );
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 1.5s;
+}
+
+#final-screen.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.final-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 600px;
+
+    animation: finalAppear 2s ease;
+}
+
+.final-heart {
+    font-size: 80px;
+
+    filter:
+        drop-shadow(0 0 15px #ff1767)
+        drop-shadow(0 0 40px #ff0055)
+        drop-shadow(0 0 80px #ff0055);
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.final-content h1 {
+    margin-top: 20px;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(45px, 10vw, 75px);
+
+    font-weight: 400;
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #ff317b,
+        0 0 40px #ff0055;
+}
+
+.final-content p {
+    margin-top: 20px;
+
+    color: #efc6d4;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+.infinity {
+    margin-top: 25px;
+
+    font-size: 65px;
+
+    color: #ff6c9d;
+
+    text-shadow:
+        0 0 15px #ff1264,
+        0 0 40px #ff0055;
+
+    animation: infinityPulse 2s ease-in-out infinite;
+}
+
+.forever {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #ffb3ca;
+}
+
+@keyframes finalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes infinityPulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* =========================================================
+   ANIMAÇÃO DO CORAÇÃO
+========================================================= */
+
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+/* =========================================================
+   RESPONSIVIDADE — CELULAR
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .intro-content h1 {
+        font-size: 48px;
+    }
+
+    .intro-heart {
+        font-size: 60px;
+    }
+
+    #heart-container {
+        width: 180px;
+        height: 180px;
+    }
+
+    #heart-container::before {
+        font-size: 120px;
+    }
+
+    .orbit-text {
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .cute {
+        font-size: 22px;
+    }
+
+    .text-1 {
+        left: 4%;
+    }
+
+    .text-2 {
+        right: 4%;
+    }
+
+    .text-3 {
+        left: 8%;
+    }
+
+    .text-4 {
+        right: 8%;
+    }
+
+    .text-6 {
+        right: 2%;
+    }
+
+    #controls {
+        right: 12px;
+        bottom: 24px;
+    }
+
+    .control-button {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    #interaction-hint {
+        bottom: 18px;
+
+        font-size: 8px;
+    }
+
+    .message-box {
+        padding: 25px 20px;
+    }
+
+    .message-box h2 {
+        font-size: 42px;
+    }
+
+    .message-box p {
+        font-size: 12px;
+    }
+
+    #memories h2 {
+        font-size: 40px;
+    }
+
+    .memory {
+        width: 110px;
+    }
+
+    .memory-image {
+        height: 80px;
+    }
+}
+
+/* =========================================================
+   TELAS MUITO PEQUENAS
+========================================================= */
+
+@media (max-height: 650px) {
+
+    .intro-heart {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .intro-content h1 {
+        font-size: 40px;
+    }
+
+    .intro-content p {
+        font-size: 11px;
+    }
+
+    #enterButton {
+        margin-top: 20px;
+        padding: 12px 20px;
+    }
+}
