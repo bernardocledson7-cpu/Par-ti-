@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#050005">
+
+    <title>Galáxia do Amor ❤️</title>
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TELA DE ENTRADA
+    ====================================================== -->
+
+    <div id="intro">
+
+        <div class="intro-particles"></div>
+
+        <div class="intro-content">
+
+            <div class="intro-heart">❤️</div>
+
+            <h1>Para o meu amor</h1>
+
+            <p>
+                Existe um universo inteiro<br>
+                que foi criado para você...
+            </p>
+
+            <button id="enterButton">
+                ✨ Entrar na nossa galáxia ✨
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         EXPERIÊNCIA PRINCIPAL
+    ====================================================== -->
+
+    <main id="galaxyPage">
+
+        <!-- Fundo estrelado -->
+        <div id="stars"></div>
+
+        <!-- Canvas onde ficará a galáxia 3D -->
+        <div id="galaxy-container"></div>
+
+
+        <!-- =================================================
+             CORAÇÃO PRINCIPAL
+        ================================================== -->
+
+        <div id="heart-container">
+
+            <!-- O JavaScript vai preencher o coração
+                 com partículas 3D -->
+
+        </div>
+
+
+        <!-- =================================================
+             TEXTOS ORBITAIS
+        ================================================== -->
+
+        <div id="orbit-texts">
+
+            <span class="orbit-text text-1">
+                TE AMO ❤️
+            </span>
+
+            <span class="orbit-text text-2">
+                AMOR ETERNO 💕
+            </span>
+
+            <span class="orbit-text text-3">
+                MY LOVE ❤️
+            </span>
+
+            <span class="orbit-text text-4">
+                INFINITO ∞
+            </span>
+
+            <span class="orbit-text text-5">
+                PARA SEMPRE 💗
+            </span>
+
+            <span class="orbit-text text-6">
+                VOCÊ É MEU UNIVERSO 🌌
+            </span>
+
+            <span class="orbit-text text-7">
+                MEU AMOR ❤️
+            </span>
+
+            <span class="orbit-text text-8">
+                INFINITO AMOR ∞
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             FIGURINHAS CARINHOSAS
+        ================================================== -->
+
+        <div id="cute-elements">
+
+            <div class="cute cute-1">
+                🧸
+            </div>
+
+            <div class="cute cute-2">
+                🐻‍❄️
+            </div>
+
+            <div class="cute cute-3">
+                💕
+            </div>
+
+            <div class="cute cute-4">
+                🥰
+            </div>
+
+            <div class="cute cute-5">
+                💗
+            </div>
+
+            <div class="cute cute-6">
+                🐰
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             NÚCLEO / BURACO NEGRO
+        ================================================== -->
+
+        <div id="black-hole">
+
+            <div class="black-hole-ring"></div>
+
+            <div class="black-hole-center"></div>
+
+        </div>
+
+
+        <!-- =================================================
+             MENSAGEM PRINCIPAL
+        ================================================== -->
+
+        <section id="love-message">
+
+            <div class="message-box">
+
+                <span class="message-small">
+                    PARA VOCÊ ❤️
+                </span>
+
+                <h2>
+                    Meu amor,
+                </h2>
+
+                <p>
+                    Se o universo fosse infinito,
+                    ainda assim não seria grande o bastante
+                    para guardar todo o amor que sinto por você.
+                </p>
+
+                <p>
+                    Você é a minha estrela,
+                    o meu universo
+                    e o meu lugar favorito.
+                </p>
+
+                <strong>
+                    Eu te amo infinitamente. ∞❤️
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MEMÓRIAS
+        ================================================== -->
+
+        <section id="memories">
+
+            <h2>
+                Nossas memórias ❤️
+            </h2>
+
+            <p class="memory-subtitle">
+                Cada lembrança é uma estrela no nosso universo.
+            </p>
+
+            <div class="memory-orbit">
+
+                <!--
+                    Depois podemos colocar fotos reais aqui.
+                    Por enquanto são espaços reservados.
+                -->
+
+                <div class="memory memory-1">
+                    <div class="memory-image">
+                        📸
+                    </div>
+                    <span>
+                        Nossa história
+                    </span>
+                </div>
+
+                <div class="memory memory-2">
+                    <div class="memory-image">
+                        ❤️
+                    </div>
+                    <span>
+                        Meu momento favorito
+                    </span>
+                </div>
+
+                <div class="memory memory-3">
+                    <div class="memory-image">
+                        ✨
+                    </div>
+                    <span>
+                        Para sempre
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTROLES
+        ================================================== -->
+
+        <div id="controls">
+
+            <button id="musicButton"
+                    class="control-button"
+                    aria-label="Ativar música">
+
+                🎵
+
+            </button>
+
+
+            <button id="heartButton"
+                    class="control-button"
+                    aria-label="Enviar coração">
+
+                ❤️
+
+            </button>
+
+
+            <button id="messageButton"
+                    class="control-button"
+                    aria-label="Mostrar mensagem">
+
+                💌
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             INDICAÇÃO DE INTERAÇÃO
+        ================================================== -->
+
+        <div id="interaction-hint">
+
+            <span>
+                ✨ Arraste para explorar o nosso universo ✨
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             PLAYER DE MÚSICA
+        ================================================== -->
+
+        <audio id="loveMusic"
+               loop
+               preload="auto">
+
+            <!--
+                Depois vamos colocar aqui a música que você escolher.
+
+                Exemplo:
+
+                <source src="musica.mp3" type="audio/mpeg">
+            -->
+
+        </audio>
+
+
+        <!-- =================================================
+             NOTIFICAÇÃO
+        ================================================== -->
+
+        <div id="notification">
+
+            <span id="notificationIcon">
+                ❤️
+            </span>
+
+            <span id="notificationText">
+                Eu te amo!
+            </span>
+
+        </div>
+
+
+        <!-- =================================================
+             TELA FINAL
+        ================================================== -->
+
+        <section id="final-screen">
+
+            <div class="final-stars"></div>
+
+            <div class="final-content">
+
+                <div class="final-heart">
+                    ❤️
+                </div>
+
+                <h1>
+                    Meu universo é você.
+                </h1>
+
+                <p>
+                    E enquanto existirem estrelas,
+                    existirá o meu amor por você.
+                </p>
+
+                <div class="infinity">
+                    ∞
+                </div>
+
+                <span class="forever">
+                    PARA SEMPRE ❤️
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         BIBLIOTECA 3D
+    ====================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+
+    <!-- =====================================================
+         NOSSO JAVASCRIPT
+    ====================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
